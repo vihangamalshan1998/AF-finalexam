@@ -1,0 +1,42 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class products extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            category: []
+        };
+    }
+    componentDidMount() {
+        sevices.get.then((res)=>{
+            this.setState({
+                category: res.data
+            });
+            console.log(this.state.category);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }));
+    }
+}
+exports.default = products;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

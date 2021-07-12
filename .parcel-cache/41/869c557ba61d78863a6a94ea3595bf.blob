@@ -1,0 +1,81 @@
+var helpers = require("./node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _addCatergoryComponent = require("./component/AddCatergoryComponent");
+var _addCatergoryComponentDefault = parcelHelpers.interopDefault(_addCatergoryComponent);
+var _addProductComponent = require("./component/AddProductComponent");
+var _addProductComponentDefault = parcelHelpers.interopDefault(_addProductComponent);
+var _catoergory = require("./component/catoergory");
+var _catoergoryDefault = parcelHelpers.interopDefault(_catoergory);
+var _ = require("./component/");
+var _Default = parcelHelpers.interopDefault(_);
+var _navbar = require("./component/navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+class App extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default, {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 15
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Switch, {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/",
+            exact: true,
+            component: _catoergoryDefault.default,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 18
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/Addcatergory",
+            exact: true,
+            component: _addCatergoryComponentDefault.default,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/AddProduct",
+            exact: true,
+            component: _addProductComponentDefault.default,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\app.jsx",
+                lineNumber: 20
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = App;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

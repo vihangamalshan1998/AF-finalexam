@@ -1,0 +1,117 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class navbar extends _react.Component {
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("nav", {
+            className: "navbar navbar-expand-lg navbar-light bg-primary",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 6
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "navbar-brand",
+            href: "/",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 7
+            },
+            __self: this
+        }, "Sliit Prctice Test"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "navbar-toggler",
+            type: "button",
+            "data-toggle": "collapse",
+            "data-target": "#navbarNav",
+            "aria-controls": "navbarNav",
+            "aria-expanded": "false",
+            "aria-label": "Toggle navigation",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 8
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "navbar-toggler-icon",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 9
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "collapse navbar-collapse justify-content-center",
+            id: "navbarNav",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 11
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("ul", {
+            className: "navbar-nav",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 12
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item active",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 13
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "nav-link",
+            href: "/",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 14
+            },
+            __self: this
+        }, "Catergories ")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 16
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "nav-link",
+            href: "/",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 17
+            },
+            __self: this
+        }, "Create Catogeies")), /*#__PURE__*/ _reactDefault.default.createElement("li", {
+            className: "nav-item",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "nav-link",
+            href: "/",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\navbar.jsx",
+                lineNumber: 20
+            },
+            __self: this
+        }, "Create Vehicle"))))));
+    }
+}
+exports.default = navbar;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

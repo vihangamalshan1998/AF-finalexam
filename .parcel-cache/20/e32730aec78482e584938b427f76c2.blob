@@ -1,0 +1,44 @@
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+//product Service URLS
+const GETALL_PRODUCT_API_BASE_URL = "http://localhost:8070/products/all";
+const ADD_PRODUCT_API_BASE_URL = "http://localhost:8070/products/add";
+const GET_PRODUCT_USINGID_API_BASE_URL = "http://localhost:8070/products/product";
+const DELETE_PRODUCT_USINGID_API_BASE_URL = "http://localhost:8070/products/delete";
+//Catergory Service URLS
+const GETALL_CATERGORY_API_BASE_URL = "http://localhost:8070/catergery/all";
+const ADD_CATERGORY_API_BASE_URL = "http://localhost:8070/catergery/add";
+const GET_CATERGORY_USINGID_API_BASE_URL = "http://localhost:8070/catergery/catergory";
+class SystemServices {
+    //add Catergory
+    addcatergories(catergory) {
+        return _axiosDefault.default.post(ADD_CATERGORY_API_BASE_URL, catergory);
+    }
+    //add product
+    addproducts(product) {
+        return _axiosDefault.default.post(ADD_PRODUCT_API_BASE_URL, product);
+    }
+    //get all products
+    getProductsDetails() {
+        return _axiosDefault.default.get(GETALL_PRODUCT_API_BASE_URL);
+    }
+    //get all catergories
+    getCatergoryDetails() {
+        return _axiosDefault.default.get(GETALL_CATERGORY_API_BASE_URL);
+    }
+    //get product using product id
+    getProductusingproductnid(id) {
+        return _axiosDefault.default.get(GET_PRODUCT_USINGID_API_BASE_URL + '/' + id);
+    }
+    //get catergory using catergory id
+    getCatergoryusingpCatergorynid(id) {
+        return _axiosDefault.default.get(GET_CATERGORY_USINGID_API_BASE_URL + '/' + id);
+    }
+    //delete product using id
+    deletePrductById(id) {
+        return _axiosDefault.default.delete(DELETE_PRODUCT_USINGID_API_BASE_URL + '/' + id);
+    }
+}
+exports.default = new SystemServices();

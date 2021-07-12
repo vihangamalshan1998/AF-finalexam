@@ -1,0 +1,397 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+var _reactSelect = require("react-select");
+var _reactSelectDefault = parcelHelpers.interopDefault(_reactSelect);
+class AddProductComponent extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            code: '',
+            name: '',
+            size: '',
+            amount: '',
+            price: '',
+            category: [],
+            options: [],
+            selecteCatergory: []
+        };
+        this.changcodedHandler = this.changcodedHandler.bind(this);
+        this.changenameHandler = this.changenameHandler.bind(this);
+        this.changensizeHandler = this.changensizeHandler.bind(this);
+        this.changeamountHandler = this.changeamountHandler.bind(this);
+        this.changeamountHandler = this.changeamountHandler.bind(this);
+        this.changecatergoryHandler = this.changecatergoryHandler.bind(this);
+    }
+    changcodedHandler = (event)=>{
+        this.setState({
+            code: event.target.value
+        });
+    };
+    changenameHandler = (event)=>{
+        this.setState({
+            name: event.target.value
+        });
+    };
+    changensizeHandler = (event)=>{
+        this.setState({
+            size: event.target.value
+        });
+    };
+    changeamountHandler = (event)=>{
+        this.setState({
+            amount: event.target.value
+        });
+    };
+    changepriceHandler = (event)=>{
+        this.setState({
+            price: event.target.value
+        });
+    };
+    changecatergoryHandler = (e)=>{
+        this.setState({
+            selecteCatergory: e ? e.map((item)=>item.value
+            ) : []
+        });
+    };
+    componentDidMount() {
+        _systemServicesDefault.default.getCatergoryDetails.then((res)=>{
+            this.setState({
+                category: res.data
+            }, ()=>{
+                let data = [];
+                this.state.category.map((item, index)=>{
+                    let catergory = {
+                        value: item._id,
+                        label: item.type
+                    };
+                    data.push(catergory);
+                });
+                this.setState({
+                    options: data
+                });
+            });
+        });
+    }
+    addvehicle = (e)=>{
+        e.preventDefault();
+        let vehicle = {
+            code: this.state.code,
+            model: this.state.model,
+            type: this.state.type,
+            name: this.state.name,
+            amount: this.state.price
+        };
+        console.log('vehicle => ' + JSON.stringify(vehicle));
+        _systemServicesDefault.default.addVehicle(vehicle).then((res)=>{
+            console.log('success');
+            this.props.history.push('/');
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("body", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 80
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 81
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            className: "form-container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 82
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 83
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 84
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 85
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 86
+            },
+            __self: this
+        }, "Code"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "ABC-####",
+            name: "code",
+            className: "form-control",
+            value: this.state.code,
+            onChange: this.changcodedHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 87
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 92
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 93
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 94
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 95
+            },
+            __self: this
+        }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Name",
+            name: "name",
+            className: "form-control",
+            value: this.state.name,
+            onChange: this.changenameHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 96
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 102
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 103
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 104
+            },
+            __self: this
+        }, "Amount"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "number",
+            placeholder: "price",
+            name: "amount",
+            className: "form-control",
+            value: this.state.amount,
+            onChange: this.changepriceHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 105
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 110
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 111
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 112
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 113
+            },
+            __self: this
+        }, "Size"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "number",
+            placeholder: "size",
+            name: "price",
+            className: "form-control",
+            value: this.state.size,
+            onChange: this.changepriceHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 114
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 119
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 120
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 121
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 122
+            },
+            __self: this
+        }, "Price"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            type: "number",
+            placeholder: "price",
+            name: "price",
+            className: "form-control",
+            value: this.state.price,
+            onChange: this.changepriceHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 123
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 128
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 129
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 130
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 131
+            },
+            __self: this
+        }, "Categories"), /*#__PURE__*/ _reactDefault.default.createElement(_reactSelectDefault.default, {
+            options: this.state.options,
+            onChange: this.changecatergoryHandler,
+            className: "basic-multi-select",
+            isMulti: true,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 132
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 142
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-3 mt-4 mb-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 144
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-success btn-block",
+            onClick: this.addvehicle,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 145
+            },
+            __self: this
+        }, "Add Vehicle")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-3 mt-4 mb-5 ",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 148
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-danger btn-block",
+            onClick: this.cancle,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 149
+            },
+            __self: this
+        }, "cancle")))))));
+    }
+}
+exports.default = AddProductComponent;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

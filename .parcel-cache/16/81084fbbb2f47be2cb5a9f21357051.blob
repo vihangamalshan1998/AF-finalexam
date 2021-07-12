@@ -1,0 +1,257 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+var _reactSelect = require("react-select");
+var _reactSelectDefault = parcelHelpers.interopDefault(_reactSelect);
+class AddCatergoryComponent extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            Description: '',
+            selectedproducts: [],
+            products: [],
+            options: []
+        };
+        this.changenameHandler = this.changenameHandler.bind(this);
+        this.changedescriptionHandler = this.changedescriptionHandler.bind(this);
+        this.changeproductHandler = this.changeproductHandler.bind(this);
+    }
+    changenameHandler = (event)=>{
+        this.setState({
+            name: event.target.value
+        });
+    };
+    changedescriptionHandler = (event)=>{
+        this.setState({
+            Description: event.target.value
+        });
+    };
+    changeproductHandler = (e)=>{
+        this.setState({
+            selectedproducts: e ? e.map((item)=>item.value
+            ) : []
+        });
+    };
+    componentDidMount() {
+        _systemServicesDefault.default.getProductsDetails().then((res)=>{
+            this.setState({
+                products: res.data
+            }, ()=>{
+                let data = [];
+                this.state.products.map((item, index)=>{
+                    let vehicle = {
+                        value: item._id,
+                        label: item.name
+                    };
+                    data.push(vehicle);
+                });
+                this.setState({
+                    options: data
+                });
+            });
+        });
+    }
+    addcatergory = (e)=>{
+        e.preventDefault();
+        let catergory = {
+            type: this.state.name,
+            type: this.state.name,
+            vehicles: this.state.selectedvehicle
+        };
+        console.log('vehicle => ' + JSON.stringify(catergory));
+        _systemServicesDefault.default.addCatorgory(catergory).then((res)=>{
+            console.log('success');
+            this.props.history.push('/');
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("body", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 64
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 65
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            className: "form-container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 66
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 67
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 68
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 69
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 70
+            },
+            __self: this
+        }, "Name"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Name",
+            name: "name",
+            className: "form-control",
+            value: this.state.type,
+            onChange: this.changenameHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 71
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 76
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 77
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 78
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 79
+            },
+            __self: this
+        }, "Description"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Description",
+            name: "Description",
+            className: "form-control",
+            value: this.state.Description,
+            onChange: this.changedescriptionHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 80
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 85
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-4",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 86
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 87
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 88
+            },
+            __self: this
+        }, "Products"), /*#__PURE__*/ _reactDefault.default.createElement(_reactSelectDefault.default, {
+            options: this.state.options,
+            onChange: this.changeproductHandler,
+            className: "basic-multi-select",
+            isMulti: true,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 89
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 100
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-3 mt-4 mb-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 102
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-success btn-block",
+            onClick: this.addcatergory,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 103
+            },
+            __self: this
+        }, "Add Catergories")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-3 mt-4 mb-5 ",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 106
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+            className: "btn btn-danger btn-block",
+            onClick: this.cancle,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddCatergoryComponent.jsx",
+                lineNumber: 107
+            },
+            __self: this
+        }, "cancle")))))));
+    }
+}
+exports.default = AddCatergoryComponent;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

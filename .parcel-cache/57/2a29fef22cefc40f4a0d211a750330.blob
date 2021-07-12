@@ -1,0 +1,161 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+class catoergory extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            category: []
+        };
+    }
+    componentDidMount() {
+        _systemServicesDefault.default.getCatergoryDetails().then((res)=>{
+            this.setState({
+                category: res.data
+            });
+            console.log(this.state.category);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("body", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                lineNumber: 20
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container-fluid mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            "data-testid": "title",
+            className: "row text-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, "Catergories")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, this.state.category.map((category)=>/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "col-md-4",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 29
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "card mt-3 sellercard",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 30
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "product text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 31
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 32
+                },
+                __self: this
+            }, "Catergory Name:", /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 32
+                },
+                __self: this
+            }, category.name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "product text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 34
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 35
+                },
+                __self: this
+            }, "Catergory Description:", /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 35
+                },
+                __self: this
+            }, category.code))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "row mt-2",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 37
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "col-12",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 38
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "p-3 text-center text-white mt-2 cursor",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 39
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+                className: "btn btn-success btn-block",
+                onClick: (e)=>this.NavigationPreloadManager(e, category._id)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 40
+                },
+                __self: this
+            }, "View vehicles"), " ", /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\catoergory.jsx",
+                    lineNumber: 40
+                },
+                __self: this
+            }))))))
+        )))));
+    }
+}
+exports.default = catoergory;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

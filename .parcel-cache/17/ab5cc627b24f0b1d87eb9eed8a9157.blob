@@ -1,0 +1,204 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+class Buyproducts extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            id: this.props.match.params.id,
+            price: '',
+            amount: '',
+            products: [],
+            total: ''
+        };
+        this.changepriceHandler = this.changepriceHandler.bind(this);
+        this.changepamountHandler = this.changepamountHandler.bind(this);
+    }
+    changepriceHandler = (event)=>{
+        this.setState({
+            price: event.target.value
+        });
+    };
+    changepamountHandler = (event)=>{
+        this.setState({
+            amount: event.target.value
+        });
+    };
+    componentDidMount() {
+        _systemServicesDefault.default.getProductusingproductnid(this.state.id).then((res)=>{
+            this.setState({
+                products: res.data
+            });
+            console.log(this.state.products.price);
+        });
+        console.log(this.state.id);
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("body", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 33
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 34
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row text-center mt-2",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 35
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 36
+            },
+            __self: this
+        }, "Calculate Amount")), /*#__PURE__*/ _reactDefault.default.createElement("form", {
+            className: "form-container",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 38
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 39
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 41
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }, "Price"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Catergory-Type",
+            name: "type",
+            className: "form-control",
+            value: this.state.products.price,
+            onChange: this.changepriceHandler,
+            disabled: true,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 43
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 49
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 50
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 51
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, "Amount"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Amount",
+            name: "amount",
+            className: "form-control",
+            value: this.state.amount,
+            onChange: this.changepamountHandler,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 53
+            },
+            __self: this
+        })))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row d-flex justify-content-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "col-md-8 ml-2 mr-2 mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "form-group names",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 61
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 62
+            },
+            __self: this
+        }, "Total Price"), /*#__PURE__*/ _reactDefault.default.createElement("input", {
+            placeholder: "Total Price",
+            name: "type",
+            className: "form-control",
+            value: this.state.products.price * this.state.amount,
+            onChange: this.changetypeHandler,
+            disabled: true,
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\Buyproducts.jsx",
+                lineNumber: 63
+            },
+            __self: this
+        }))))))));
+    }
+}
+exports.default = Buyproducts;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

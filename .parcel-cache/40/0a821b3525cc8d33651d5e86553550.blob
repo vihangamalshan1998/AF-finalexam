@@ -1,0 +1,84 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+var _reactSelect = require("react-select");
+var _reactSelectDefault = parcelHelpers.interopDefault(_reactSelect);
+class AddProductComponent extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            code: '',
+            name: '',
+            size: '',
+            amount: '',
+            category: [],
+            options: [],
+            selecteCatergory: []
+        };
+        this.changcodedHandler = this.changcodedHandler.bind(this);
+        this.changemodelHandler = this.changemodelHandler.bind(this);
+        this.changetypeHandler = this.changetypeHandler.bind(this);
+        this.changenameHandler = this.changenameHandler.bind(this);
+        this.changepriceHandler = this.changepriceHandler.bind(this);
+        this.changecatergoryHandler = this.changecatergoryHandler.bind(this);
+    }
+    componentDidMount() {
+        _systemServicesDefault.default.getCatergoryDetails().then((res)=>{
+            this.setState({
+                category: res.data
+            }, ()=>{
+                let data = [];
+                this.state.category.map((item, index)=>{
+                    let catergory = {
+                        value: item._id,
+                        label: item.type
+                    };
+                    data.push(catergory);
+                });
+                this.setState({
+                    options: data
+                });
+            });
+        });
+    }
+    addvehicle = (e)=>{
+        e.preventDefault();
+        let vehicle = {
+            code: this.state.code,
+            model: this.state.model,
+            type: this.state.type,
+            name: this.state.name,
+            amount: this.state.price
+        };
+        console.log('vehicle => ' + JSON.stringify(vehicle));
+        _systemServicesDefault.default.addVehicle(vehicle).then((res)=>{
+            console.log('success');
+            this.props.history.push('/');
+        });
+    };
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\AddProductComponent.jsx",
+                lineNumber: 61
+            },
+            __self: this
+        }));
+    }
+}
+exports.default = AddProductComponent;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

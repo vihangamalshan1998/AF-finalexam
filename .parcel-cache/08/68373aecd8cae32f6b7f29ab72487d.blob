@@ -1,0 +1,206 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _systemServices = require("../services/SystemServices");
+var _systemServicesDefault = parcelHelpers.interopDefault(_systemServices);
+class products extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            products: []
+        };
+    }
+    componentDidMount() {
+        _systemServicesDefault.default.getProductsDetails().then((res)=>{
+            this.setState({
+                products: res.data
+            });
+            console.log(this.state.products);
+        });
+    }
+    render() {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("body", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 20
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "container-fluid mt-5",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 21
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            "data-testid": "title",
+            className: "row text-center",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 22
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 23
+            },
+            __self: this
+        }, "Catergories")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "row",
+            __source: {
+                fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, this.state.products.map((products1)=>/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "col-md-4",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 29
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "card mt-3 sellercard",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 30
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 31
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 32
+                },
+                __self: this
+            }, "Product Code:", /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 32
+                },
+                __self: this
+            }, products1.code))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 34
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 35
+                },
+                __self: this
+            }, "Product Code:", /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 35
+                },
+                __self: this
+            }, products1.code))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 37
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 38
+                },
+                __self: this
+            }, "Product Code:", /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 38
+                },
+                __self: this
+            }, products1.code))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 40
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 41
+                },
+                __self: this
+            }, products1.size)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "text-center mt-3",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 43
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 44
+                },
+                __self: this
+            }, products1.price)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "row mt-2",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 46
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "col-12",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 47
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+                className: "p-3 text-center text-white mt-2 cursor",
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 48
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+                className: "btn btn-success btn-block",
+                onClick: (e)=>this.NavigationPreloadManager(e, category._id)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 49
+                },
+                __self: this
+            }, "View vehicles"), " ", /*#__PURE__*/ _reactDefault.default.createElement("br", {
+                __source: {
+                    fileName: "C:\\Users\\JontyRulz\\Desktop\\Final Exam\\Frontend\\component\\products.jsx",
+                    lineNumber: 49
+                },
+                __self: this
+            }))))))
+        )))));
+    }
+}
+exports.default = products;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
